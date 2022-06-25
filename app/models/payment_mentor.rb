@@ -1,0 +1,2 @@
+class PaymentMentor < ApplicationRecord
+end

@@ -1,0 +1,27 @@
+<%= form_with(model: book_payment) do |form| %>
+  <% if book_payment.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(book_payment.errors.count, "error") %> prohibited this book_payment from being saved:</h2>
+
+      <ul>
+        <% book_payment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :payment_proof, style: "display: block" %>
+    <%= form.text_field :payment_proof %>
+  </div>
+
+  <div>
+    <%= form.label :is_valid_payment, style: "display: block" %>
+    <%= form.check_box :is_valid_payment %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Date mentors</h1>
+
+<div id="date_mentors">
+  <% @date_mentors.each do |date_mentor| %>
+    <%= render date_mentor %>
+    <p>
+      <%= link_to "Show this date mentor", date_mentor %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New date mentor", new_date_mentor_path %>

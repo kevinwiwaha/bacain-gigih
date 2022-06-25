@@ -1,0 +1,22 @@
+<%= form_with(model: date_mentor) do |form| %>
+  <% if date_mentor.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(date_mentor.errors.count, "error") %> prohibited this date_mentor from being saved:</h2>
+
+      <ul>
+        <% date_mentor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.text_field :date %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

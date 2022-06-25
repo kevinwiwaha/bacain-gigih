@@ -1,0 +1,2 @@
+class BookPayment < ApplicationRecord
+end

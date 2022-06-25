@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @book_payment %>
+
+<div>
+  <%= link_to "Edit this book payment", edit_book_payment_path(@book_payment) %> |
+  <%= link_to "Back to book payments", book_payments_path %>
+
+  <%= button_to "Destroy this book payment", @book_payment, method: :delete %>
+</div>
