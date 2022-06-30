@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_30_125540) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_30_140819) do
   create_table "book_payments", force: :cascade do |t|
     t.string "payment_proof"
     t.boolean "is_valid_payment"
