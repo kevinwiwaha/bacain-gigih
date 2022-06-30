@@ -1,0 +1,2 @@
+class PublisherUser < User
+end
