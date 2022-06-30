@@ -1,7 +1,6 @@
 class User < ApplicationRecord
-    has_one :role, :class_name => "Role"
-    
-    belongs_to :mentor
-    belongs_to :book_payment
-    belongs_to :payment_mentor
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end
