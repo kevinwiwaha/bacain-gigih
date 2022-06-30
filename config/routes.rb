@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'static#homepage'
   resources :payment_mentors
   resources :date_mentors
   resources :mentors
