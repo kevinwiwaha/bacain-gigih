@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= form_with(model: payment_mentor) do |form| %>
   <% if payment_mentor.errors.any? %>
     <div style="color: red">
@@ -25,3 +26,50 @@
     <%= form.submit %>
   </div>
 <% end %>
+=======
+<%= form_with(model: payment_mentor) do |form| %>
+  <% if payment_mentor.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(payment_mentor.errors.count, "error") %> prohibited this payment_mentor from being saved:</h2>
+
+      <ul>
+        <% payment_mentor.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <p>Name: </p>
+    <%= payment_mentor.user.name %>
+  </div>
+
+  <div>
+    <p>Mentor: </p>
+    <%= payment_mentor.mentor.id %>
+  </div>
+
+  <div>
+    <p>Price: </p>
+    <%= payment_mentor.mentor.price  %>
+  </div>
+
+  <div>
+    <%= form.label :payment_proof, style: "display: block" %>
+    <%= form.action="/action_page.php"
+      <label for="img">Select image:</label>
+      <input type="file" id="img" name="img" accept="image/*">
+    %>
+  </div>
+
+  <div>
+    <%= form.label :is_valid_payment, style: "display: block" %>
+    <%= form.check_box :is_valid_payment %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+>>>>>>> 44f0b03d097c8b08eaf45a4bd8d4d066cc0de6f4

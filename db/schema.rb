@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema[7.0].define(version: 2022_06_30_154420) do
+=======
+ActiveRecord::Schema[7.0].define(version: 2022_06_30_215829) do
+>>>>>>> 44f0b03d097c8b08eaf45a4bd8d4d066cc0de6f4
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -90,21 +94,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_30_154420) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string "role_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "address"
-    t.string "email"
-    t.string "password"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.string "name"
-    t.integer "role_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string "type"
+    t.string "address"
+    t.string "role"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -117,5 +118,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_30_154420) do
   add_foreign_key "mentors", "users"
   add_foreign_key "payment_mentors", "mentors"
   add_foreign_key "payment_mentors", "users"
-  add_foreign_key "users", "roles"
 end

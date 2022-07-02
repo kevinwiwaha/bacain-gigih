@@ -1,0 +1,20 @@
+<h1>New booking mentor</h1>
+
+<div>
+    <p>Name: </p>
+    <%= mentor.user.name  %>
+</div>
+
+<div>
+    <p>Book title: </p>
+    <%= mentor.book.title %>
+</div>
+
+<div>
+    <p>Mentor: </p>
+    <%= @mentors.each do |mentor| %>
+        <%= mentor.mentor_id %>
+        <%= mentor.price_mentor %>
+</div>
+
+<button></button>
