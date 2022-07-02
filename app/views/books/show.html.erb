@@ -19,7 +19,7 @@
 <p> 
     <strong>Audiobook:</strong>
     <%= image_tag url_for(@book.audiobook) %>
-    <%= link_to @book.audiobook.filename, rails_blob_path(@book.audiobook, disposisition: "attachment") %>
+    <%= link_to @book.audiobook.filename, rails_blob_path(@book.audiobook) %>
                
 <p>
 

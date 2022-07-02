@@ -47,18 +47,16 @@
 						<%= image_tag book.ebook, style: 'width:80px;height:auto;' %>
 						<% end %>	
 						</td>
-
-						<td>
            
 		   					<td><% if book.audiobook.attached? %>
 						<%= image_tag book.audiobook, style: 'width:80px;height:auto;' %>
 						<% end %>
-							
-
             			</td>
 
 
-						<td><%= book.price %></td>
+						<td>
+						<%= book.price %>
+						</td>
 
            				<td>
 							<% if book.cover.attached? %>
