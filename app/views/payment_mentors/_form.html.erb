@@ -12,8 +12,26 @@
   <% end %>
 
   <div>
+    <p>Name: </p>
+    <%= payment_mentor.user.name %>
+  </div>
+
+  <div>
+    <p>Mentor: </p>
+    <%= payment_mentor.mentor.id %>
+  </div>
+
+  <div>
+    <p>Price: </p>
+    <%= payment_mentor.mentor.price  %>
+  </div>
+
+  <div>
     <%= form.label :payment_proof, style: "display: block" %>
-    <%= form.text_field :payment_proof %>
+    <%= form.action="/action_page.php"
+      <label for="img">Select image:</label>
+      <input type="file" id="img" name="img" accept="image/*">
+    %>
   </div>
 
   <div>
