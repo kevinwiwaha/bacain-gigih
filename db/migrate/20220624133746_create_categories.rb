@@ -1,9 +1,6 @@
 class CreateCategories < ActiveRecord::Migration[7.0]
   def change
-    create_table :categories do |t|
-      t.string :category_name
-
-      t.timestamps
+    add_reference :name, :books, :category, null: false, foreign_key: true
     end
   end
 end

@@ -23,12 +23,12 @@
 
   <div>
     <%= form.label :ebook, style: "display: block" %>
-    <%= form.text_field :ebook %>
+    <%= form.file_field :ebook %>
   </div>
 
   <div>
     <%= form.label :audiobook, style: "display: block" %>
-    <%= form.text_field :audiobook %>
+    <%= form.file_field :audiobook %>
   </div>
 
   <div>
@@ -38,7 +38,12 @@
 
   <div>
     <%= form.label :cover, style: "display: block" %>
-    <%= form.text_field :cover %>
+    <%= form.file_field :cover %>
+  </div>
+
+  <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.select :category_id, options_for_select(@categories.collect { |cat| [cat.category_name,cat.id]})%>
   </div>
 
   <div>

@@ -65,6 +65,6 @@ class BookPaymentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def book_payment_params
-      params.require(:book_payment).permit(:payment_proof, :is_valid_payment)
+      params.require(:book_payment).permit(:payment_proof, :is_valid_payment, :book_id, :user_id)
     end
 end

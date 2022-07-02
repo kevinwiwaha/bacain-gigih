@@ -1,6 +1,26 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @book_payment %>
+<p>
+    <strong>Book ID:</strong>
+    <%= book_payment.book_id %>
+  </p>
+
+  <p>
+    <strong>User ID:</strong>
+    <%= book_payment.user_id %>
+  </p>
+
+  <p>
+    <strong>Payment proof:</strong>
+    <% if @book_payment.payment_proof.attached? %>
+      <%= image_tag @book_payment.payment_proof, width: "200px" %>
+      <% end%>
+  </p>
+
+  <p>
+    <strong>Is valid payment:</strong>
+    <%= book_payment.is_valid_payment %>
+  </p>
 
 <div>
   <%= link_to "Edit this book payment", edit_book_payment_path(@book_payment) %> |

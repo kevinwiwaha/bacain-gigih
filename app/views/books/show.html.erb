@@ -1,6 +1,44 @@
-<p style="color: green"><%= notice %></p>
 
-<%= render @book %>
+
+<p> 
+    <strong>Title:</strong>
+    <%= @book.title %>
+<p>
+
+<p> 
+    <strong>Description:</strong>
+    <%= @book.description%>
+<p>
+
+<p> 
+    <strong>Ebook:</strong>
+    <%= image_tag url_for(@book.ebook) %>
+    <%= link_to @book.ebook.filename, rails_blob_path(@book.ebook, disposisition: "attachment") %>
+<p>
+
+<p> 
+    <strong>Audiobook:</strong>
+    <%= image_tag url_for(@book.audiobook) %>
+    <%= link_to @book.audiobook.filename, rails_blob_path(@book.audiobook, disposisition: "attachment") %>
+               
+<p>
+
+<p> 
+    <strong>Price:</strong>
+    <%= @book.price %>
+<p>
+
+<p> 
+    <strong>Cover:</strong>
+      <% if @book.cover.attached? %>
+      <%= image_tag @book.cover, width: "200px" %>
+      <% end%>
+<p>
+
+<p> 
+    <strong>Category:</strong>
+    <%= link_to @book.category.category_name, @book.category %>
+<p>
 
 <div>
   <%= link_to "Edit this book", edit_book_path(@book) %> |
@@ -8,3 +46,4 @@
 
   <%= button_to "Destroy this book", @book, method: :delete %>
 </div>
+ 
