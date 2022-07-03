@@ -1,28 +1,11 @@
-<%
-=begin%>
- <p style="color: green"><%= notice %></p>
-
-<h1>Books</h1>
-
-<div id="books">
-  <% @books.each do |book| %>
-    <%= render book %>
-    <%= image_tag book.cover, width: "100px" if book.cover.attached? %>
-    <p>
-      <%= link_to "Show this book", book %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New book", new_book_path %> 
-<%
-=end%>
-
 <div class="card card-default">
 	<div class="card-header card-header-border-bottom">
 		<h1>Books</h1>
 	</div>
 	<div class="card-body">
+
+
+	<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link text-danger" %>
 		<table class="table table-bordered table-striped">
 			<thead>
 				<tr>

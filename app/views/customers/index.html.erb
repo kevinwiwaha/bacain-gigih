@@ -1,0 +1,58 @@
+<div class="card card-default">
+	<div class="card-header card-header-border-bottom">
+		<h1>Books</h1>
+	</div>
+	<div class="card-body">
+
+	<%= button_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link text-danger" %>
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Description</th>
+					<th>Ebook</th>
+					<th>Audiobook</th>
+					<th>Price</th>
+					<th>Cover</th>
+					<th>Category</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			<div id="books">
+         <% @books.each do |book| %>
+					<tr>
+						<td><%= book.title %></td>
+						<td><%= book.description %></td>
+
+						<td><% if book.ebook.attached? %>
+						<%= image_tag book.ebook, style: 'width:80px;height:auto;' %>
+						<% end %>	
+						</td>
+           
+		   					<td><% if book.audiobook.attached? %>
+						<%= image_tag book.audiobook, style: 'width:80px;height:auto;' %>
+						<% end %>
+            			</td>
+
+
+						<td>
+						<%= book.price %>
+						</td>
+
+           				<td>
+							<% if book.cover.attached? %>
+								<%= image_tag book.cover, style: 'width:80px;height:auto;' %>
+							<% end %>	
+						</td>
+            <td><%= link_to book.category.category_name, book.category%></td>
+					</tr>
+          <td>
+          <%= link_to "Show this book", book %>
+           </td>
+				<% end %>
+			</tbody>
+		</table>
+		<%= link_to "New book", new_book_path %>
+	</div>
+</div>

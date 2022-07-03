@@ -11,7 +11,12 @@
     </div>
   <% end %>
 
+  <div class="col-lg-6">
+    <%= form.text_field :user_id, id: :book_publisher_user_id, value:current_user.id, type:"hidden" %>
+  </div>
+  
   <div>
+    <%= current_user.role %>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
   </div>

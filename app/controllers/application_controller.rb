@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-class ApplicationController < ActionController::Base
-end
-=======
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
 
@@ -15,4 +11,3 @@ class ApplicationController < ActionController::Base
               devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :address, :role)}
          end
 end
->>>>>>> 44f0b03d097c8b08eaf45a4bd8d4d066cc0de6f4
