@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :payment_mentors
   resources :date_mentors
   resources :mentors
+  get 'book_payments/confirm'
   resources :book_payments
+  
   resources :books
   resources :categories
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

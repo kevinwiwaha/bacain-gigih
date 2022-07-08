@@ -7,6 +7,8 @@
     <%= render book_payment %>
     <p>
       <%= link_to "Show this book payment", book_payment %>
+      <a href="/book_payments/confirm?id=<%= book_payment.id %>">Confirm</a>
+      <!-- <%= link_to "Confirm Payment", book_payment %> -->
     </p>
   <% end %>
 </div>

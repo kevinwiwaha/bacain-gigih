@@ -1,6 +1,12 @@
 class BookPaymentsController < ApplicationController
   before_action :set_book_payment, only: %i[ show edit update destroy ]
 
+  def confirm
+    head :ok
+    @book_payments = BookPayment.find(params[:id])
+    
+    @book_payments.update(:payment_proof => 'adadeeh',:user_id => 1)
+  end
   # GET /book_payments or /book_payments.json
   def index
     @book_payments = BookPayment.all
